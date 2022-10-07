@@ -25,6 +25,7 @@ clientSchema.post("/", async (req, res) => {
   }
 });
 
+
 //delete
 clientSchema.delete("/:id",async(req,res)=>{
   try{
