@@ -18,7 +18,7 @@ timerRoute.get("/:id", async (req, res) => {
 //post
 timerRoute.post("/", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const minds = await timer.create(req.body);
     res.send(minds);
   } catch (e) {

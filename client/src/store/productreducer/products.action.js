@@ -9,7 +9,7 @@ import {
 
 export const GetproductApi = () => async (dispatch) => {
   try {
-    const response = await axios.get("https://dry-lake-12626.herokuapp.com/products");  
+    const response = await axios.get("http://localhost:8080/products");  
     dispatch({
       type: GET_PRODUCTS,
       payload: response.data,
@@ -23,7 +23,7 @@ export const GetproductApi = () => async (dispatch) => {
 export const Postproduct = (payload) => async (dispatch) => {
   try {
     const response = await axios.post(
-      "https://dry-lake-12626.herokuapp.com/products",
+      "http://localhost:8080/products",
       payload
     );
     dispatch({
@@ -40,7 +40,7 @@ export const Postproduct = (payload) => async (dispatch) => {
 export const DeleteproductApi = (id) => async (dispatch) => {
   try {
     const respone = await axios.delete(
-      `https://dry-lake-12626.herokuapp.com/products/${id}`
+      `http://localhost:8080/products/${id}`
     );
     dispatch({
       type: DELETE_PRODUCT,
@@ -55,13 +55,13 @@ export const DeleteproductApi = (id) => async (dispatch) => {
 
 export const EditProductApi = (id, params) => async (dispatch) => {
   try {
-    const response = await axios.put(
-      `https://dry-lake-12626.herokuapp.com/products/${id}`,
+    const response = await axios.patch(
+      `http://localhost:8080/products/${id}`,
       params
     );
     dispatch({
       type: EDIT_PRODUCT,
-      payload: response.data,
+      // payload: response.data,
     });
     return response.data;
   } catch (e) {
@@ -72,7 +72,7 @@ export const EditProductApi = (id, params) => async (dispatch) => {
 export const SearchbyQueryApi = (query) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `https://dry-lake-12626.herokuapp.com/products?q=${query}`
+      `http://localhost:8080/products?q=${query}`
     );
     dispatch({
       type: SEARCH_BY_QUERY,

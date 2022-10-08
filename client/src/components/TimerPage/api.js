@@ -1,9 +1,11 @@
 import axios from 'axios'
 export const postdata = (send) => {
   axios
-    .post("https://dry-lake-12626.herokuapp.com/mind", send)
+    .post("http://localhost:8080/timer", send)
     .then((res) => console.log("done"));
 };
+
+
 export function msToTime(duration) {
    var milliseconds = parseInt(duration % 1000),
      seconds = parseInt((duration / 1000) % 60),
