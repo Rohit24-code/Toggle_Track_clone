@@ -41,7 +41,7 @@ userRoute.delete("/:id",async(req,res)=>{
 //updated data
 userRoute.patch("/:id", async (req, res) => {
   try {
-    await timer.findByIdAndUpdate(req.params.id, { ...req.body });
+    await User.findByIdAndUpdate(req.params.id, { ...req.body });
     res.send("updated sucessfully");
   } catch (e) {
     res.status(401).send(e.message);
