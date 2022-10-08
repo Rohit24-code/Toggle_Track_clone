@@ -1,7 +1,5 @@
 const mongoose= require("mongoose")
-
-let connection = mongoose.connect(
-  "mongodb+srv://Rohit:1234@cluster0.ee6yhdf.mongodb.net/toggle?retryWrites=true&w=majority"
-);
+require("dotenv").config()
+let connection = mongoose.connect(process.env.MONGO_URL);
 
 module.exports=connection
