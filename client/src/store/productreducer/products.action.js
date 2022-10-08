@@ -9,7 +9,9 @@ import {
 
 export const GetproductApi = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:8080/products");  
+    const response = await axios.get(
+      "https://damp-mesa-49161.herokuapp.com/products"
+    );
     dispatch({
       type: GET_PRODUCTS,
       payload: response.data,
@@ -23,7 +25,7 @@ export const GetproductApi = () => async (dispatch) => {
 export const Postproduct = (payload) => async (dispatch) => {
   try {
     const response = await axios.post(
-      "http://localhost:8080/products",
+      "https://damp-mesa-49161.herokuapp.com/products",
       payload
     );
     dispatch({
@@ -40,7 +42,7 @@ export const Postproduct = (payload) => async (dispatch) => {
 export const DeleteproductApi = (id) => async (dispatch) => {
   try {
     const respone = await axios.delete(
-      `http://localhost:8080/products/${id}`
+      `https://damp-mesa-49161.herokuapp.com/products/${id}`
     );
     dispatch({
       type: DELETE_PRODUCT,
@@ -52,11 +54,10 @@ export const DeleteproductApi = (id) => async (dispatch) => {
   }
 };
 
-
 export const EditProductApi = (id, params) => async (dispatch) => {
   try {
     const response = await axios.patch(
-      `http://localhost:8080/products/${id}`,
+      `https://damp-mesa-49161.herokuapp.com/products/${id}`,
       params
     );
     dispatch({
@@ -72,7 +73,7 @@ export const EditProductApi = (id, params) => async (dispatch) => {
 export const SearchbyQueryApi = (query) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `http://localhost:8080/products?q=${query}`
+      `https://damp-mesa-49161.herokuapp.com/products?q=${query}`
     );
     dispatch({
       type: SEARCH_BY_QUERY,

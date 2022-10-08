@@ -43,8 +43,7 @@ const {data} = useSelector(state=>state.timer)
   const stop = () => {
     dispatch(
       PostTIMER({ id: Date.now(), project: text, stopat: msToTime(watch) })
-    );
-    dispatch(GetTIMERApi())
+    ).then(()=>dispatch(GetTIMERApi()))
     clearInterval(id.current);
     id.current = null;
     setSend();
